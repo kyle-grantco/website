@@ -1,0 +1,28 @@
+/* Button Components */
+.get-started-btn,
+.revenue-btn,
+.insider-btn,
+button[type="submit"],
+.btn-primary,
+.modal button {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: black !important;
+    padding: 0.8rem 1.5rem;
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.get-started-btn:hover,
+.revenue-btn:hover,
+.insider-btn:hover,
+button[type="submit"]:hover,
+.btn-primary:hover,
+.modal button:hover {
+    background-color: #e6b033 !important;
+    border-color: #e6b033 !important;
+    transform: translateY(-1px);
+} 
