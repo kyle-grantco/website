@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastercard Foundation Grant Application Support - Up to $2.5m</title>
+    <link rel="stylesheet" href="css/mastercard-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        // Get createClient from the loaded Supabase library
+        const { createClient } = supabase
+    </script>
+    <script src="js/supabase-config.js"></script>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="assets/images/logo.png" alt="Grant&Co">
+        </div>
+        <button class="get-started-btn">Get Started</button>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="hero">
+            <h1>Apply for Mastercard Foundation: Funds for Resilience and Prosperity</h1>
+            <h2>Up to $2.5m grant</h2>
+            <button class="get-started-btn">Get Started</button>
+        </section>
+
+        <section class="eligibility">
+            <h2>Eligibility</h2>
+            <div class="eligibility-content">
+                <div class="geo">
+                    <h3>Geographic Focus</h3>
+                    <p>Benin, Burundi, Botswana, Cameroon, Côte d'Ivoire, Democratic Republic of Congo, Ethiopia, Ghana, Kenya, Malawi, Mozambique, Nigeria, Rwanda, Senegal, Sierra Leone, South Africa, South Sudan, Tanzania, Uganda and Zambia.</p>
+                </div>
+                <div class="sectors">
+                    <h3>Sectors</h3>
+                    <p>Ecotourism, Agroforestry, Conservation, Regenerative Agriculture, Blue Economy, Renewable Energy, E-mobility, Circular Economy and others.</p>
+                </div>
+            </div>
+            <button class="get-started-btn">Get Started</button>
+        </section>
+
+        <section class="video-section">
+            <h2>Is this grant right for you?</h2>
+            <p>Watch this video to learn more:</p>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/swBvNct4kfQ"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <section class="insider-cta">
+            <button class="insider-btn">Get Insider Insights</button>
+        </section>
+
+        <footer>
+            <p>We have no affiliation with Mastercard Foundation or any other funder. Grant&Co helps companies apply for funding.</p>
+        </footer>
+    </main>
+
+    <!-- Email Popup Modal -->
+    <div id="email-popup" class="modal hidden">
+        <div class="modal-content">
+            <h2>Add your email here to get Insider Insights including:</h2>
+            <ul>
+                <li>$revenue you need</li>
+                <li># of jobs created to be eligible</li>
+                <li>% of the jobs HAVE TO be women</li>
+            </ul>
+            <p>These are insider insights you won't find on the Mastercard Foundation website.</p>
+            <form id="email-form">
+                <input type="email" id="email" required placeholder="Enter your email">
+                <button type="submit">Get Insights</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Revenue Form Modal -->
+    <div id="revenue-form" class="modal hidden">
+        <div class="modal-content">
+            <h2>What was your revenue last year?</h2>
+            <div class="revenue-options">
+                <button class="revenue-btn" data-revenue="0">$0</button>
+                <button class="revenue-btn" data-revenue="1-500k">$1 to $500k</button>
+                <button class="revenue-btn" data-revenue="500k-2m">$500k to $2m</button>
+                <button class="revenue-btn" data-revenue="2m-20m">$2m to $20m</button>
+                <button class="revenue-btn" data-revenue="20m+">$20m+</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Redirect Modal -->
+    <div id="booking-redirect" class="modal hidden">
+        <div class="modal-content">
+            <h2>Let's schedule a time to talk</h2>
+            <p>Redirecting you...</p>
+        </div>
+    </div>
+
+    <!-- Newsletter Signup Modal -->
+    <div id="newsletter-signup" class="modal hidden">
+        <div class="modal-content">
+            <h2>Great. Please sign up for a newsletter of funding opportunities here:</h2>
+            <iframe src="https://grantcopartners.substack.com/embed" 
+                    width="480" height="320" 
+                    style="border:1px solid #EEE; background:white;" 
+                    frameborder="0" scrolling="no">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Exit Popup -->
+    <div id="exit-popup" class="modal hidden">
+        <div class="modal-content">
+            <button class="close-btn">&times;</button>
+            <h2>Get free funding opportunities</h2>
+            <iframe src="https://grantcopartners.substack.com/embed" 
+                    width="480" 
+                    height="320" 
+                    style="border:1px solid #EEE; background:white;" 
+                    frameborder="0" 
+                    scrolling="no">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Insider Insights Modal -->
+    <div id="insider-form" class="modal hidden">
+        <div class="modal-content">
+            <h2>What was your revenue last year?</h2>
+            <div class="revenue-options">
+                <button class="insider-revenue-btn" data-revenue="0">$0</button>
+                <button class="insider-revenue-btn" data-revenue="1-500k">$1 to $500k</button>
+                <button class="insider-revenue-btn" data-revenue="500k-2m">$500k to $2m</button>
+                <button class="insider-revenue-btn" data-revenue="2m-20m">$2m to $20m</button>
+                <button class="insider-revenue-btn" data-revenue="20m+">$20m+</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="insider-email-form" class="modal hidden">
+        <div class="modal-content">
+            <h2>Sounds like you'd be a great fit!</h2>
+            <p>I'll send you information you can't get from Mastercard including:</p>
+            <ul>
+                <li>$revenue you need</li>
+                <li># of jobs created to be eligible</li>
+                <li>% of the jobs HAVE TO be women</li>
+            </ul>
+            <form id="insider-email-submit">
+                <input type="email" id="insider-email" required placeholder="Enter your email">
+                <button type="submit">Get Insights</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/mastercard-script.js"></script>
+</body>
+</html>
